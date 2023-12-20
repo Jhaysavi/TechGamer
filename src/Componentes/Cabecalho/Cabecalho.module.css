@@ -46,3 +46,15 @@
 .pesquisaAtiva{
     display: none;
 }
+
+/*Botões menu */
+.menuProdutos{
+    display: flex;
+    justify-content: space-evenly;
+
+    list-style: none;
+}
+
+.itemProdutos a{
+    text-decoration: none;
+}
