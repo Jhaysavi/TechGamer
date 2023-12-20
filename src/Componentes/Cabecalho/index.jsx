@@ -24,20 +24,24 @@ function CabecalhoHome() {
                                 </a>
                             </li>
 
-                            <li onClick={toggleSearch} className={styles.menuItem.menuItemAlinhamento}>
-                                <div className={styles.bgIcones}>
+                            <li className={`${styles.menuItem} ${pesquisarVisivel ? styles.pesquisaAtiva : ''}`}>
+                                <div onClick={toggleSearch} id='toggleSearch' className={styles.bgIcones}>
                                     <IoSearchCircle />
                                 </div>
+                            </li>
 
-                                {pesquisarVisivel && (
+
+                            {pesquisarVisivel && (
+                                <div>
                                     <input
                                         type='text'
                                         id='searchInput'
                                         placeholder='O que você está procurando?'
                                         className={styles.menuInput}
                                     />
-                                )}
-                            </li>
+
+                                </div>
+                            )}
 
                             <li className={styles.menuItem}>
                                 <a href="#">
@@ -57,7 +61,19 @@ function CabecalhoHome() {
                     </ul>
                 </section>
 
-                <section className={styles.cabecalhoTopo}>
+                <section className={styles.cabecalhoBotoes}>
+                    <ul>
+                        <nav className={styles.menuProdutos}>
+                            <li className={styles.itemProdutos}><a href="#">Home</a></li>
+                            <li className={styles.itemProdutos}><a href="#">Monte seu PC</a></li>
+                            <li className={styles.itemProdutos}><a href="#">PC/Notebook</a></li>
+                            <li className={styles.itemProdutos}><a href="#">Cadeiras</a></li>
+                            <li className={styles.itemProdutos}><a href="#">Teclado RGB</a></li>
+                            <li className={styles.itemProdutos}><a href="#">Mouse</a></li>
+                            <li className={styles.itemProdutos}><a href="#">Consoles</a></li>
+                            <li className={styles.itemProdutos}><a href="#">Controles</a></li>
+                        </nav>
+                    </ul>
                 </section>
             </header >
         </>

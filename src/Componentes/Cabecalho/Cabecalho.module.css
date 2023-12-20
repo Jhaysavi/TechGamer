@@ -28,3 +28,21 @@
 .imgContainer {
     background: linear-gradient(to bottom right, #70FF00 0%, rgba(255, 255, 255, 0.00) 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #70FF00 0%, rgba(255, 255, 255, 0.00) 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #70FF00 0%, rgba(255, 255, 255, 0.00) 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #70FF00 0%, rgba(255, 255, 255, 0.00) 50%) top right / 50% 50% no-repeat;
 }
+
+.bgIcones{
+    background-color: #850000;
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    padding: 1rem; 
+}
+
+.menuInput{
+    border-radius: 5px;
+    display: block;
+}
+
+.pesquisaAtiva{
+    display: none;
+}
