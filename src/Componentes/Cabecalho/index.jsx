@@ -6,21 +6,25 @@ import { IoMdCart } from "react-icons/io";
 
 function CabecalhoHome() {
     const [pesquisarVisivel, setPesquisarVisivel] = useState(false);
+    const [menuMobileVisible, setMenuMobileVisible] = useState(false);
 
     const toggleSearch = () => {
         setPesquisarVisivel(!pesquisarVisivel);
     };
 
+    const toggleMenuMobile = () => {
+        setMenuMobileVisible(!menuMobileVisible);
+    };
+
     return (
         <>
-            <header className={styles.container}>
+            <header className={`${styles.container} ${menuMobileVisible ? styles.menuMobileActive : ''}`}>
                 <section>
                     <ul>
                         <nav className={styles.menu}>
-
                             <li className={styles.menuItem}>
                                 <a href="#">
-                                    <img src="../../public/logo.png" className={styles.imgContainer} alt="Logo TechGamer" />
+                                    <img src="/logo.png" className={styles.imgContainer} alt="Logo TechGamer" />
                                 </a>
                             </li>
 
@@ -30,7 +34,6 @@ function CabecalhoHome() {
                                 </div>
                             </li>
 
-
                             {pesquisarVisivel && (
                                 <div>
                                     <input
@@ -39,7 +42,6 @@ function CabecalhoHome() {
                                         placeholder='O que você está procurando?'
                                         className={styles.menuInput}
                                     />
-
                                 </div>
                             )}
 
@@ -60,7 +62,7 @@ function CabecalhoHome() {
                         </nav>
                     </ul>
                 </section>
-
+               
                 <section className={styles.cabecalhoBotoes}>
                     <ul>
                         <nav className={styles.menuProdutos}>
@@ -75,7 +77,32 @@ function CabecalhoHome() {
                         </nav>
                     </ul>
                 </section>
-            </header >
+
+                {/* Hamburger Menu Button */}
+                <div className={styles.hamburgerMenu} onClick={toggleMenuMobile}>
+                    <div className={styles.bar}></div>
+                    <div className={styles.bar}></div>
+                    <div className={styles.bar}></div>
+                </div>
+
+                {/* Mobile Menu */}
+            {menuMobileVisible && (
+                <div className={styles.mobileMenu}>
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Monte seu PC</a></li>
+                            <li><a href="#">PC/Notebook</a></li>
+                            <li><a href="#">Cadeiras</a></li>
+                            <li><a href="#">Teclado RGB</a></li>
+                            <li><a href="#">Mouse</a></li>
+                            <li><a href="#">Consoles</a></li>
+                            <li><a href="#">Controles</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                )}
+            </header>
         </>
     );
 }
