@@ -133,6 +133,24 @@
         color: #ffffff;
         font-size: 1.5rem; 
     }
+
+    .mobileIconsContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: right;
+        margin-left: 36px;
+        
+    }
+    
+    .mobileIconsContainer .menuItem {
+        margin-top: 10px; /* Adicione margem superior entre os ícones */
+        background-color: #850000;
+        border-radius: 100%;
+        width: 30%;
+        padding: 2.5px;
+    }
+    
+    
 }
 
 

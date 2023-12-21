@@ -93,23 +93,59 @@ function CabecalhoHome() {
                     <div className={styles.bar}></div>
                     <div className={styles.bar}></div>
                 </div>
+                
 
                 {/* Mobile Menu */}
                 {menuMobileVisible && (
-                    <div className={styles.mobileMenu}>
-                        <nav>
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Monte seu PC</a></li>
-                                <li><a href="#">PC/Notebook</a></li>
-                                <li><a href="#">Cadeiras</a></li>
-                                <li><a href="#">Teclado RGB</a></li>
-                                <li><a href="#">Mouse</a></li>
-                                <li><a href="#">Consoles</a></li>
-                                <li><a href="#">Controles</a></li>
-                            </ul>
-                        </nav>
+    <div className={styles.mobileMenu}>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Monte seu PC</a></li>
+                <li><a href="#">PC/Notebook</a></li>
+                <li><a href="#">Cadeiras</a></li>
+                <li><a href="#">Teclado RGB</a></li>
+                <li><a href="#">Mouse</a></li>
+                <li><a href="#">Consoles</a></li>
+                <li><a href="#">Controles</a></li>
+            </ul>
+        </nav>
+
+        <div className={styles.mobileIconsContainer}>
+            <div className={styles.menuItem}>
+                {inputVisivel ? (
+                    <div>
+                        <input
+                            type='text'
+                            id='searchInput'
+                            placeholder='O que você está procurando?'
+                            className={styles.menuInput}
+                            onBlur={() => setInputVisivel(false)}
+                        />
                     </div>
+                ) : (
+                    <div onClick={toggleSearch} className={styles.bgIcones1}>
+                        <IoSearchCircle />
+                    </div>
+                )}
+            </div>
+
+            <div className={styles.menuItem}>
+                <a href="#">
+                    <div className={styles.bgIcones2}>
+                        <FaUser />
+                        Login/Cadastro
+                    </div>
+                </a>
+            </div>
+
+            <div className={styles.menuItem}>
+                <a href="#" className={styles.bgIcones3}>
+                    <IoMdCart />
+                </a>
+            </div>
+        </div>
+    </div>
                 )}
             </header>
         </>
