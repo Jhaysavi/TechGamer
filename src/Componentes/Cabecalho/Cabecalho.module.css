@@ -7,7 +7,6 @@
     align-items: center;
     display: flex;
     justify-content: space-evenly;
-
     list-style: none;
 }
 
@@ -53,10 +52,13 @@
     justify-content: space-evenly;
 
     list-style: none;
+    
 }
 
 .itemProdutos a{
     text-decoration: none;
+    color: #ffffff;
+    font-size: 1.5rem;
 }
 
 .hamburgerMenu {
@@ -83,6 +85,8 @@
     display: block;
 }
 
+
+
 /* Mostra o botão do menu hamburguer para telas pequenas */
 @media screen and (max-width: 768px) {
     .hamburgerMenu {
@@ -93,12 +97,14 @@
     .menuProdutos {
         display: none;
     }
+
+    
     
 
     .mobileMenu ul li {
         list-style: none; /* Remove os pontos dos links */
-        margin-bottom: 10px;
-        margin-left: 40px;
+        margin-bottom: 15px;
+        margin-left: 35px;
     }
     
     .mobileMenu ul li a {
