@@ -5,15 +5,16 @@ import { FaUser } from "react-icons/fa";
 import { IoMdCart } from "react-icons/io";
 
 function CabecalhoHome() {
-    const [pesquisarVisivel, setPesquisarVisivel] = useState(false);
+    const [inputVisivel, setInputVisivel] = useState(false);
     const [menuMobileVisible, setMenuMobileVisible] = useState(false);
 
     const toggleSearch = () => {
-        setPesquisarVisivel(!pesquisarVisivel);
+        setInputVisivel(!inputVisivel);
     };
 
     const toggleMenuMobile = () => {
         setMenuMobileVisible(!menuMobileVisible);
+        setInputVisivel(false);
     };
 
     return (
@@ -27,41 +28,49 @@ function CabecalhoHome() {
                                     <img src="/logo.png" className={styles.imgContainer} alt="Logo TechGamer" />
                                 </a>
                             </li>
-
-                            <li className={`${styles.menuItem} ${pesquisarVisivel ? styles.pesquisaAtiva : ''}`}>
-                                <div onClick={toggleSearch} id='toggleSearch' className={styles.bgIcones}>
-                                    <IoSearchCircle />
-                                </div>
-                            </li>
-
-                            {pesquisarVisivel && (
-                                <div>
-                                    <input
-                                        type='text'
-                                        id='searchInput'
-                                        placeholder='O que você está procurando?'
-                                        className={styles.menuInput}
-                                    />
-                                </div>
-                            )}
-
-                            <li className={styles.menuItem}>
-                                <a href="#">
-                                    <div className={styles.bgIcones}>
-                                        <FaUser />
-                                    </div>
-                                    Login/Cadastro
-                                </a>
-                            </li>
-
-                            <li className={styles.menuItem}>
-                                <a href="#" className={styles.bgIcones}>
-                                    <IoMdCart />
-                                </a>
-                            </li>
+                      
+                        
+                            
                         </nav>
                     </ul>
                 </section>
+
+    <nav className={styles.menu}>
+    <div className={styles.iconsContainer}>
+        <li className={styles.menuItem}>
+            {inputVisivel ? (
+                <div>
+                    <input
+                        type='text'
+                        id='searchInput'
+                        placeholder='O que você está procurando?'
+                        className={styles.menuInput}
+                        onBlur={() => setInputVisivel(false)}
+                    />
+                </div>
+            ) : (
+                <div onClick={toggleSearch} className={styles.bgIcones}>
+                    <IoSearchCircle />
+                </div>
+            )}
+        </li>
+
+        <li className={styles.menuItem}>
+            <a href="#">
+                <div className={styles.bgIcones}>
+                    <FaUser />
+                    Login/Cadastro
+                </div>
+            </a>
+        </li>
+
+        <li className={styles.menuItem}>
+            <a href="#" className={styles.bgIcones}>
+                <IoMdCart />
+            </a>
+        </li>
+    </div>
+</nav>
                
                 <section className={styles.cabecalhoBotoes}>
                     <ul>
@@ -86,21 +95,21 @@ function CabecalhoHome() {
                 </div>
 
                 {/* Mobile Menu */}
-            {menuMobileVisible && (
-                <div className={styles.mobileMenu}>
-                    <nav>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Monte seu PC</a></li>
-                            <li><a href="#">PC/Notebook</a></li>
-                            <li><a href="#">Cadeiras</a></li>
-                            <li><a href="#">Teclado RGB</a></li>
-                            <li><a href="#">Mouse</a></li>
-                            <li><a href="#">Consoles</a></li>
-                            <li><a href="#">Controles</a></li>
-                        </ul>
-                    </nav>
-                </div>
+                {menuMobileVisible && (
+                    <div className={styles.mobileMenu}>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Monte seu PC</a></li>
+                                <li><a href="#">PC/Notebook</a></li>
+                                <li><a href="#">Cadeiras</a></li>
+                                <li><a href="#">Teclado RGB</a></li>
+                                <li><a href="#">Mouse</a></li>
+                                <li><a href="#">Consoles</a></li>
+                                <li><a href="#">Controles</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 )}
             </header>
         </>

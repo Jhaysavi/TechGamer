@@ -15,12 +15,15 @@
     text-decoration: none;
 }
 
-
+.imgContainer{
+    margin-right: 68rem;
+    margin-bottom: -150px;
+}
 .menuInput {
     display: flex;
     align-items: center;
 
-    height: 32px;
+    height: 35px;
     width: 300px;
 }
 
@@ -31,11 +34,11 @@
 .bgIcones{
     background-color: #850000;
     border-radius: 50px;
-
     cursor: pointer;
-
-    padding: 1rem; 
+    padding: 10px; 
+    display: flex;
 }
+
 
 .menuInput{
     border-radius: 5px;
@@ -85,10 +88,21 @@
     display: block;
 }
 
+.iconsContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 43rem;
+}
+
+.menuItem {
+    margin-right: 30px; /* Adicione o espaçamento desejado entre os ícones */
+    margin-bottom: 50px;
+}
+
 
 
 /* Mostra o botão do menu hamburguer para telas pequenas */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
     .hamburgerMenu {
         display: block;
     }
@@ -98,9 +112,16 @@
         display: none;
     }
 
+    .imgContainer{
+        margin-left: 56rem;
+        margin-bottom: -50px;
+    }
     
-    
+    .bgIcones{
+        display: none;
+    }
 
+    
     .mobileMenu ul li {
         list-style: none; /* Remove os pontos dos links */
         margin-bottom: 15px;
