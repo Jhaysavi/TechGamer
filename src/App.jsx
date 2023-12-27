@@ -1,22 +1,29 @@
 import './App.css'
 import CabecalhoHome from './Componentes/Cabecalho'
+import Card from './Componentes/Cards';
 import Carousel from './Componentes/Carousel';
 
 function App() {
 
   const images = [
-    `assets/cadeiraCarousel.png`, 
-    `assets/headphoneCarousel.png`,
-    `assets/monitorCarousel.png`,
     `assets/noetbookCarousel.png`,
-    `assets/ringLigthCarousel.png`
+    `assets/noetbookCarousel.png`,
+    `assets/noetbookCarousel.png`,
+    `assets/noetbookCarousel.png`,
+    `assets/noetbookCarousel.png`,
   ];
 
   return (
     <>
     
      <CabecalhoHome />
-     <Carousel images={images} />  
+     <Carousel images={images} /> 
+
+      <Card 
+        imagem="assets/noetbookCarousel.png"
+        descricao="Notebook ACER 8gb ram 1T de armazenamento"
+        preco="1.050"
+      />
        
     </>
   )

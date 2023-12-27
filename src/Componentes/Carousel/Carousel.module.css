@@ -1,0 +1,11 @@
+.container {
+    background-image: linear-gradient(to left top, #eaca67, #ebb34f, #ec9a3c, #ec8030, #eb622c, #ea542c, #e9452c, #e8322e, #e9362b, #ea3928, #eb3d25, #ec4022);
+    
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.imagem{
+    margin: 1rem;
+    width: 30%;
+}

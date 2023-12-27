@@ -11,7 +11,7 @@ function Carousel({images}) {
         const intervaloID = setInterval(() =>{
 
             sliderRef.current.slickNext();
-        },3000);
+        },10000);
 
         return () => clearInterval(intervaloID);
     },[]);
@@ -22,17 +22,37 @@ function Carousel({images}) {
         speed:500,
         slidesToShow:1,
         slidesToScroll:1,
+        responsive:[
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+            },
+          },
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+            },
+          },
+        ],
     };
 
     return (
-        <div className="autoplay-carousel">
+        <div className={styles.container}>
           <Slider ref={sliderRef} {...configuracoes}>
             {images.map((image, index) => (
               <div key={index}>
-                <img src={image} alt={`Imagem ${index + 1}`} />
+                <img src={image} className={styles.imagem} alt={`Imagem ${index + 1}`} />
               </div>
             ))}
           </Slider>
+
+          <div>
+            <h2>Produtos com até 60% de desconto!</h2>
+          </div>
         </div>
       );
     
