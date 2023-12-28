@@ -1,0 +1,47 @@
+.botao{
+    background-color:#FF0000 ;
+    border-radius: 5px;
+    color: #ffffff;
+
+    font-size: 1.4rem;
+
+    padding: 6px 5px;
+}
+
+.botao:hover{
+    background-color: #740000;
+
+    cursor: pointer;
+}
+
+.icone{
+    color: #000000;
+
+    font-size: 1.5rem;
+}
+
+
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    margin-left: 1rem;
+    padding: 1rem;
+    width: 200px;
+}
+
+.cardImagem{
+    margin-bottom: 1rem;
+    width: 250px;
+}
+
+.preco{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.descricao{
+    margin-bottom: 1rem;
+}
