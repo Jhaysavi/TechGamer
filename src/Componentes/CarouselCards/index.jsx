@@ -3,8 +3,9 @@ import Card from '../Cards';
 import "/node_modules/slick-carousel/slick/slick.css";
 import "/node_modules/slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
+import PropTypes from 'prop-types';
 
-function CarouselCards() {
+function CarouselCards({ backgroundColor, cardsDeProdutos }) {
     const configuracoes = {
         dots: true,
         infinite: true,
@@ -20,69 +21,47 @@ function CarouselCards() {
                 },
             },
             {
-                breakpoint: 1024,
+                breakpoint: 486,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
                 },
             },
         ],
     };
 
     return (
-        <div >
+        <div style={backgroundColor={backgroundColor}}>
             <Slider {...configuracoes}>
-                <div key={1} className={styles.container} >
-                    <Card
-                        imagem="/assets/monitorCarousel.png"
-                        descricao="Monitor 4k"
-                        preco="250,00"
-                    />
-                </div>
+                {cardsDeProdutos.map((produto, index) => (
+                    <div key={index} className={styles.container} >
+                        <Card
+                            imagem={produto.imagem}
+                            descricao={produto.descricao}
+                            preco={produto.preco}
+                        />
+                    </div>
 
-                <div key={2} className={styles.container} >
-                    <Card
-                        imagem="/assets/monitorCarousel.png"
-                        descricao="Monitor 4k"
-                        preco="250,00"
-                    />
-                </div>
-
-                <div key={1} className={styles.container} >
-                    <Card
-                        imagem="/assets/monitorCarousel.png"
-                        descricao="Monitor 4k"
-                        preco="250,00"
-                    />
-                </div>
-
-                <div key={2} className={styles.container} >
-                    <Card
-                        imagem="/assets/monitorCarousel.png"
-                        descricao="Monitor 4k"
-                        preco="250,00"
-                    />
-                </div>
-
-                <div key={1} className={styles.container} >
-                    <Card
-                        imagem="/assets/monitorCarousel.png"
-                        descricao="Monitor 4k"
-                        preco="250,00"
-                    />
-                </div>
-
-                <div key={2} className={styles.container} >
-                    <Card
-                        imagem="/assets/monitorCarousel.png"
-                        descricao="Monitor 4k"
-                        preco="250,00"
-                    />
-                </div>
+                ))}
 
             </Slider>
         </div>
     );
 }
+
+CarouselCards.PropTypes={
+    backgroundColor: PropTypes.string,
+    cardsDeProdutos: PropTypes.arrayOf(
+        PropTypes.shape({
+            imagem: PropTypes.string.isRequired,
+            descricao: PropTypes.string.isRequired,
+            preco: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+};
+
+CarouselCards.defaultProps = {
+    backgroundColor:'#ffff',
+};
 
 export default CarouselCards;

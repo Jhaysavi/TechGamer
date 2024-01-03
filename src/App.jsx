@@ -18,53 +18,35 @@ function App() {
   ];
 
   const cardLaptop = [
-    <Card
-      imagem="`assets/noetbookCarousel.png`"
-      descricao="Notebook ACER 8gb ram 1T de armazenamento"
-      preco="1.050"
-    />,
+    {
+      imagem:"assets/noetbookCarousel.png",
+      descricao:"Notebook ACER 8gb ram 1T de armazenamento",
+      preco:"1.050",
+    },
 
-    <Card
-      imagem="assets/noetbookCarousel.png"
-      descricao="Notebook ACER 8gb ram 1T de armazenamento"
-      preco="1.050"
-    />,
+    {
+      imagem:"assets/noetbookCarousel.png",
+      descricao:"Notebook ACER 8gb ram 1T de armazenamento",
+      preco:"1.050"
+    },
 
-    <Card
-      imagem="assets/noetbookCarousel.png"
-      descricao="Notebook ACER 8gb ram 1T de armazenamento"
-      preco="1.050"
-    />,
+    {
+      imagem:"assets/noetbookCarousel.png",
+      descricao:"Notebook ACER 8gb ram 1T de armazenamento",
+      preco:"1.050"
+    },
 
-    <Card
-      imagem="assets/noetbookCarousel.png"
-      descricao="Notebook ACER 8gb ram 1T de armazenamento"
-      preco="1.050"
-    />,
+    {
+      imagem:"assets/noetbookCarousel.png",
+      descricao:"Notebook ACER 8gb ram 1T de armazenamento",
+      preco:"1.050"
+    },
 
-    <Card
-      imagem="assets/noetbookCarousel.png"
-      descricao="Notebook ACER 8gb ram 1T de armazenamento"
-      preco="1.050"
-    />,
-
-    <Card
-      imagem="assets/noetbookCarousel.png"
-      descricao="Notebook ACER 8gb ram 1T de armazenamento"
-      preco="1.050"
-    />,
-
-    <Card
-      imagem="assets/noetbookCarousel.png"
-      descricao="Notebook ACER 8gb ram 1T de armazenamento"
-      preco="1.050"
-    />,
-
-    <Card
-      imagem="assets/noetbookCarousel.png"
-      descricao="Notebook ACER 8gb ram 1T de armazenamento"
-      preco="1.050"
-    />
+    {
+      imagem:"assets/noetbookCarousel.png",
+      descricao:"Notebook ACER 8gb ram 1T de armazenamento",
+      preco:"1.050"
+    },
   ]
 
   return (
@@ -73,7 +55,7 @@ function App() {
       <CabecalhoHome />
       <Carousel images={images} />
 
-      <CarouselCards cards={cardLaptop} />
+      <CarouselCards backgroundColor="#0000" cardsDeProdutos={cardLaptop} />
       <Footer/>
 
     </>
