@@ -68,6 +68,15 @@
     font-size: 1.5rem;
 }
 
+.itemProdutos a:hover{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    background-color: #F98404;
+    padding: 0.4rem;
+    border-radius: 10px;
+}
+
 .hamburgerMenu {
     display: none;
     cursor: pointer;
