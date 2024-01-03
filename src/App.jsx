@@ -3,6 +3,7 @@ import CabecalhoHome from './Componentes/Cabecalho'
 import Card from './Componentes/Cards';
 import Carousel from './Componentes/Carousel';
 import CarouselCards from './Componentes/CarouselCards';
+import Footer from './Componentes/Footer';
 
 function App() {
 
@@ -73,6 +74,7 @@ function App() {
       <Carousel images={images} />
 
       <CarouselCards cards={cardLaptop} />
+      <Footer/>
 
     </>
   )
