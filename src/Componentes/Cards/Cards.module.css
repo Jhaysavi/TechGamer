@@ -1,47 +1,44 @@
-.botao{
-    background-color:#FF0000 ;
+.botao {
+    background-color: #FF0000;
     border-radius: 5px;
     color: #ffffff;
-
     font-size: 1.4rem;
-
     padding: 6px 5px;
 }
 
-.botao:hover{
+.botao:hover {
     background-color: #740000;
-
     cursor: pointer;
 }
 
-.icone{
+.icone {
     color: #000000;
-
     font-size: 1.5rem;
 }
 
-
-.container{
+.container {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
-
     margin-left: 1rem;
     padding: 1rem;
     width: 200px;
 }
 
-.cardImagem{
+.cardImagem {
     margin-bottom: 1rem;
     width: 250px;
 }
 
-.preco{
+.preco {
     font-size: 2rem;
     margin-bottom: 1rem;
 }
 
-.descricao{
+.descricao {
     margin-bottom: 1rem;
 }
+
+/* Comentário explicativo sobre a escolha das unidades de medida */
+/* Neste exemplo, preferimos usar 'rem' para todas as propriedades que aceitam unidades */

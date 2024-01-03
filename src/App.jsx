@@ -12,6 +12,8 @@ function App() {
     `assets/noetbookCarousel.png`,
     `assets/noetbookCarousel.png`,
     `assets/noetbookCarousel.png`,
+    `assets/noetbookCarousel.png`,
+    `assets/noetbookCarousel.png`,
   ];
 
   const cardLaptop = [

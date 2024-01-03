@@ -1,8 +1,10 @@
+/* Container principal */
 .container {
     background-color: #0F0F0F;
     padding: 2rem;
 }
 
+/* Menu Desktop */
 .menu {
     align-items: center;
     display: flex;
@@ -15,27 +17,29 @@
     text-decoration: none;
 }
 
-.imgContainer{
+.imgContainer {
     margin-right: 68rem;
     margin-bottom: -150px;
 }
+
 .menuInput {
-    display: flex;
-    align-items: center;
-
-    height: 35px;
-    width: 300px;
+    border-radius: 5px;
+    display: block;
 }
 
+/* Gradiente para a imagem */
 .imgContainer {
-    background: linear-gradient(to bottom right, #70FF00 0%, rgba(255, 255, 255, 0.00) 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #70FF00 0%, rgba(255, 255, 255, 0.00) 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #70FF00 0%, rgba(255, 255, 255, 0.00) 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #70FF00 0%, rgba(255, 255, 255, 0.00) 50%) top right / 50% 50% no-repeat;
+    background: linear-gradient(to bottom right, #70FF00 0%, rgba(255, 255, 255, 0.00) 50%) bottom right / 50% 50% no-repeat,
+                linear-gradient(to bottom left, #70FF00 0%, rgba(255, 255, 255, 0.00) 50%) bottom left / 50% 50% no-repeat,
+                linear-gradient(to top left, #70FF00 0%, rgba(255, 255, 255, 0.00) 50%) top left / 50% 50% no-repeat,
+                linear-gradient(to top right, #70FF00 0%, rgba(255, 255, 255, 0.00) 50%) top right / 50% 50% no-repeat;
 }
 
-.bgIcones{
+.bgIcones {
     background-color: #850000;
     border-radius: 50px;
     cursor: pointer;
-    padding: 10px; 
+    padding: 10px;
     display: flex;
 }
 
