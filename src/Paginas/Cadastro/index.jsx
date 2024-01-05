@@ -39,6 +39,15 @@ function Cadastro() {
             <h1>Cadastro de produtos</h1>
             <form action="/" onSubmit={lidarSubmit}>
                 <fieldset>
+                    <label htmlFor="nome">Nome:</label>
+                    <input
+                        type="text"
+                        name="nome"
+                        id="nome"
+                    />
+                </fieldset>
+
+                <fieldset>
                     <label htmlFor="preco">Preço:</label>
                     <input
                         type="number"
@@ -88,7 +97,7 @@ function Cadastro() {
                 <fieldset>
                     <label htmlFor="cor">Cores</label>
                     <input
-                        type="color"
+                        type="text"
                         name="cores"
                         value={produto.cores}
                         onChange={lidarSubmit}
