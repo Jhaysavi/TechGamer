@@ -3,11 +3,12 @@ import { useState } from "react";
 function Cadastro() {
     const [produto, setProduto] = useState({
         id: '',
+        nome:'',
         preco: '',
         descricao: '',
         estoque: '',
         imagem: '',
-        cores: '',
+        cor: '',
     });
 
     const alteracao = (e) => {
@@ -26,11 +27,12 @@ function Cadastro() {
 
         setProduto({
             id: '',
+            nome:'',
             preco: '',
             descricao: '',
             estoque: '',
             imagem: '',
-            cores: '',
+            cor: '',
         });
     };
 
@@ -44,6 +46,8 @@ function Cadastro() {
                         type="text"
                         name="nome"
                         id="nome"
+                        value={produto.nome}
+                        onChange={alteracao}
                     />
                 </fieldset>
 
@@ -52,6 +56,7 @@ function Cadastro() {
                     <input
                         type="number"
                         name="preco"
+                        id="preco"
                         value={produto.preco}
                         onChange={alteracao}
                         required
@@ -63,8 +68,8 @@ function Cadastro() {
                     <textarea
                         name="descricao"
                         id="descricao"
-                        value={produto.estoque}
-                        onChange={lidarSubmit}
+                        value={produto.descricao}
+                        onChange={alteracao}
                         cols="30"
                         rows="10"
                         required
@@ -77,8 +82,9 @@ function Cadastro() {
                     <input
                         type="number"
                         name="estoque"
+                        id="estoque"
                         value={produto.estoque}
-                        onChange={lidarSubmit}
+                        onChange={alteracao}
                         required
                     />
                 </fieldset>
@@ -88,8 +94,9 @@ function Cadastro() {
                     <input
                         type="file"
                         name="imagem"
+                        id="imagem"
                         value={produto.imagem}
-                        onChange={lidarSubmit}
+                        onChange={alteracao}
                         required
                     />
                 </fieldset>
@@ -98,9 +105,10 @@ function Cadastro() {
                     <label htmlFor="cor">Cores</label>
                     <input
                         type="text"
-                        name="cores"
-                        value={produto.cores}
-                        onChange={lidarSubmit}
+                        name="cor"
+                        id="cor"
+                        value={produto.cor}
+                        onChange={alteracao}
                     />
                 </fieldset>
 
