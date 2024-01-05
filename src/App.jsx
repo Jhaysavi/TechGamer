@@ -1,63 +1,13 @@
 import './App.css'
-import CabecalhoHome from './Componentes/Cabecalho'
-import Card from './Componentes/Cards';
-import Carousel from './Componentes/Carousel';
-import CarouselCards from './Componentes/CarouselCards';
-import Footer from './Componentes/Footer';
+import Home from './Paginas/Home';
 
 function App() {
 
-  const images = [
-    `assets/noetbookCarousel.png`,
-    `assets/noetbookCarousel.png`,
-    `assets/noetbookCarousel.png`,
-    `assets/noetbookCarousel.png`,
-    `assets/noetbookCarousel.png`,
-    `assets/noetbookCarousel.png`,
-    `assets/noetbookCarousel.png`,
-  ];
 
-  const cardLaptop = [
-    {
-      imagem:"assets/noetbookCarousel.png",
-      descricao:"Notebook ACER 8gb ram 1T de armazenamento",
-      preco:"1.050",
-    },
-
-    {
-      imagem:"assets/noetbookCarousel.png",
-      descricao:"Notebook ACER 8gb ram 1T de armazenamento",
-      preco:"1.050"
-    },
-
-    {
-      imagem:"assets/noetbookCarousel.png",
-      descricao:"Notebook ACER 8gb ram 1T de armazenamento",
-      preco:"1.050"
-    },
-
-    {
-      imagem:"assets/noetbookCarousel.png",
-      descricao:"Notebook ACER 8gb ram 1T de armazenamento",
-      preco:"1.050"
-    },
-
-    {
-      imagem:"assets/noetbookCarousel.png",
-      descricao:"Notebook ACER 8gb ram 1T de armazenamento",
-      preco:"1.050"
-    },
-  ]
 
   return (
     <>
-
-      <CabecalhoHome />
-      <Carousel images={images} />
-
-      <CarouselCards backgroundColor="#0000" cardsDeProdutos={cardLaptop} />
-      <Footer/>
-
+      <Home />
     </>
   )
 }

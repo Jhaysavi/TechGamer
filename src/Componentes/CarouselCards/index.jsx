@@ -3,7 +3,7 @@ import Card from '../Cards';
 import "/node_modules/slick-carousel/slick/slick.css";
 import "/node_modules/slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 function CarouselCards({ backgroundColor, cardsDeProdutos }) {
     const configuracoes = {
@@ -49,13 +49,13 @@ function CarouselCards({ backgroundColor, cardsDeProdutos }) {
     );
 }
 
-CarouselCards.PropTypes={
-    backgroundColor: PropTypes.string,
-    cardsDeProdutos: PropTypes.arrayOf(
-        PropTypes.shape({
-            imagem: PropTypes.string.isRequired,
-            descricao: PropTypes.string.isRequired,
-            preco: PropTypes.string.isRequired,
+CarouselCards.propTypes={
+    backgroundColor: propTypes.string,
+    cardsDeProdutos: propTypes.arrayOf(
+        propTypes.shape({
+            imagem: propTypes.string.isRequired,
+            descricao: propTypes.string.isRequired,
+            preco: propTypes.string.isRequired,
         })
     ).isRequired,
 };
