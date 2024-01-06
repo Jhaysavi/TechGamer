@@ -2,6 +2,7 @@ import CabecalhoHome from '/src/Componentes/Cabecalho/index.jsx';
 import Carousel from '/src/Componentes/Carousel/index.jsx';
 import CarouselCards from '/src/Componentes/CarouselCards/index.jsx';
 import Footer from '/src/Componentes/Footer/index.jsx';
+import '/src/Paginas/Home/App.css'; 
 
 function Home() {
     const images = [
@@ -50,11 +51,20 @@ function Home() {
             <CabecalhoHome />
             <Carousel images={images} />
 
+            {/* Hero Section */}
+            <div className="hero-section">
+                {images.slice(0, 4).map((image, index) => (
+                    <div key={index} className="hero-image">
+                        <img src={image} alt={`Hero ${index + 1}`} />
+                        <div className="image-overlay"></div>
+                    </div>
+                ))}
+            </div>
+
             <CarouselCards backgroundColor="#0000" cardsDeProdutos={cardLaptop} />
             <Footer />
-
         </>
     );
-};
+}
 
 export default Home;
