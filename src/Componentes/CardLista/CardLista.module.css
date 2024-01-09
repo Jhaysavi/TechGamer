@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 1rem;
+    padding: 1rem;
+    width: 200px;
+}
+
+.cardImagem {
+    margin-bottom: 1rem;
+    width: 250px;
+}
+
+.preco {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.descricao {
+    margin-bottom: 1rem;
+}
+
+.botaoEditar{
+    background-color: #1841bf;
+    border-radius: 5px;
+
+    color: #ffffff;
+    cursor: pointer;
+
+    font-size: 19px;
+    font-weight: 600;
+
+    margin-right: 1rem;
+    padding: 1rem;
+}
+
+.botaoExcluir{
+    background-color: #fd1005;
+    border-radius: 5px;
+
+    color: #ffffff;
+    cursor: pointer;
+
+    font-size: 19px;
+    font-weight: 600;
+
+    padding: 1rem;
+}
