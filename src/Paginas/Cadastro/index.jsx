@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from './Cadastro.module.css';
 import CardLista from "../../Componentes/CardLista";
+import Footer from "../../Componentes/Footer";
 
 function Cadastro() {
     const [produtos, setProdutos] = useState([]);
@@ -50,6 +51,13 @@ function Cadastro() {
 
     return (
         <>
+
+        <header className={styles.containerCabecalho}>
+            <img src="/logo.png" alt="Logo" className={styles.logo}/>
+            <h1 className={styles.cadastro}>Sistema de Cadastro</h1>
+            
+
+        </header>
             <section className={styles.container}>
                 <h1 className={styles.titulo}>Cadastro de produtos</h1>
                 <form action="/" onSubmit={lidarSubmit}>
@@ -145,6 +153,7 @@ function Cadastro() {
                 </div>
             </section>
 
+            < Footer />
         </>
     );
 };
