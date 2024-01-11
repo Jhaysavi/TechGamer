@@ -49,28 +49,6 @@ function Cadastro() {
         });
     };
 
-    const validationSchema = yup.object({
-        nome: yup
-          .string()
-          .required("Nome is required"),
-        preco: yup
-          .string()
-          .required("Preço is required"),
-        descricao: yup
-          .string()
-          .required("Descrição is required"),
-        estoque: yup
-          .string()
-          .required("Estoque is required"),
-          imagem: yup
-          .string()
-          .required("Imagem is required"),
-          cores: yup
-          .string()
-          .required("Cores is required"),
-      });
-
-
     return (
         <>
 
