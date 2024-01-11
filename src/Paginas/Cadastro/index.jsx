@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import styles from './Cadastro.module.css';
 import CardLista from "../../Componentes/CardLista";
 import Footer from "../../Componentes/Footer";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as yup from "yup";
 
 function Cadastro() {
     const [produtos, setProdutos] = useState([]);
@@ -75,10 +73,6 @@ function Cadastro() {
 
     return (
         <>
-    <Formik
-      initialValues={{ nome: "", preco: "", descricao: "", estoque: "", imagem:"" , cores:""}}
-      validationSchema={validationSchema}
-    />
 
         <header className={styles.containerCabecalho}>
             <img src="/logo.png" alt="Logo" className={styles.logo}/>
@@ -88,10 +82,10 @@ function Cadastro() {
         </header>
             <section className={styles.container}>
                 <h1 className={styles.titulo}>Cadastro de produtos</h1>
-                <Form action="/" onSubmit={lidarSubmit}>
+                <form action="/" method='POST' onSubmit={lidarSubmit}>
                     <fieldset className={styles.formGroup}>
                         <label className={styles.label} htmlFor="nome">Nome:</label>
-                        <Field   
+                        <input   
                             className={styles.input}
                             type="text"
                             name="nome"
@@ -99,12 +93,11 @@ function Cadastro() {
                             value={produto.nome}
                             onChange={alteracao}
                         />
-                         <ErrorMessage component="fieldset" name="nome" />  
                     </fieldset>
 
                     <fieldset className={styles.formGroup}>
                         <label className={styles.label} htmlFor="preco">Preço:</label>
-                        <Field
+                        <input
                             className={styles.input}
                             type="number"
                             name="preco"
@@ -113,13 +106,11 @@ function Cadastro() {
                             onChange={alteracao}
                             required
                         />
-                        <ErrorMessage component="fieldset" name="preco" />  
                     </fieldset>
 
                     <fieldset className={styles.formGroup}>
                         <label className={styles.label} htmlFor="descricao">Descrição:</label>
-                        <Field 
-                            as="textarea"                            
+                        <textarea  
                             className={styles.descricao}
                             name="descricao"
                             id="descricao"
@@ -127,14 +118,14 @@ function Cadastro() {
                             onChange={alteracao}
                             cols="30"
                             rows="10"
-                            required
-                        />
-                        <ErrorMessage component="fieldset" name="descricao" /> 
+                            required>
+                           
+                        </textarea> 
                     </fieldset>
 
                     <fieldset className={styles.formGroup}>
                         <label className={styles.label} htmlFor="estoque">Estoque:</label>
-                        <Field
+                        <input
                             className={styles.input}
                             type="number"
                             name="estoque"
@@ -143,7 +134,6 @@ function Cadastro() {
                             onChange={alteracao}
                             required
                         />
-                        <ErrorMessage component="fieldset" name="estoque" />
                     </fieldset>
 
                     <fieldset className={styles.formGroup}>
@@ -161,7 +151,7 @@ function Cadastro() {
 
                     <fieldset className={styles.formGroup}>
                         <label className={styles.label} htmlFor="cor">Cores</label>
-                        <Field
+                        <input
                             className={styles.input}
                             type="text"
                             name="cor"
@@ -169,11 +159,10 @@ function Cadastro() {
                             value={produto.cor}
                             onChange={alteracao}
                         />
-                         <ErrorMessage component="fieldset" name="estoque" />  
                     </fieldset>
 
                     <button type="submit" className={styles.botao}>Cadastrar produtos</button>
-                </Form>
+                </form>
             </section>
 
             <section>
