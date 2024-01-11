@@ -5,7 +5,7 @@ function Footer() {
    <>
    <footer className={styles.footer}>
     <section>
-    <h1 className={styles.titulo}>TECHGAMER INFOTMÁTICA ELTDA  / CNPJ  20.336.505/0001-39</h1>
+    <h1 className={styles.titulo}>TECHGAMER INFORMÁTICA ELTDA  / CNPJ  20.336.505/0001-39</h1>
     <div className={styles.corpoFooter}>
       <img src="/logo.png" alt="" className={styles.imgContainer} />
         <p>

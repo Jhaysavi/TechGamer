@@ -40,36 +40,14 @@
 }
 
 @media screen and (max-width: 500px) {
-  .footer{
-    background-color: #0F0F0F;
-    width:400%;
-    top:100rem;
-  }
-
   .corpoFooter{
     display:flex;
-    justify-content:space-between;
-    align-items:center;
-    color:#fff;
+    flex-direction:column;
   }
 
-  .titulo{
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center;
-    color:#fff;
-    font-size:30px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
   .corpoFooter p{
     text-align: justify;
-    font-size:30px;
-    word-wrap: break-word;
-  }
-
-  .endereco{
-    color:#fff;
-    font-size:30px;
+    display:block;
+    flex-direction:column;
   }
 }
