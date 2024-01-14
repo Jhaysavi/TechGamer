@@ -1,6 +1,13 @@
 import styles from './CardLista.module.css';
 
-function CardLista({ imagem, descricao, nome, preco }) {
+function CardLista({id, imagem, descricao, nome, preco, onExcluir}) {
+
+    const lidarExcluir = () => {
+        if(onExcluir) {
+            onExcluir(id)
+        }
+    };
+
     return (
         <div className={styles.container}>
             
@@ -14,7 +21,7 @@ function CardLista({ imagem, descricao, nome, preco }) {
                             Editar
                         </button>
 
-                        <button className={styles.botaoExcluir}>
+                        <button onClick={lidarExcluir} className={styles.botaoExcluir}>
                             Excluir
                         </button>
                     </div>

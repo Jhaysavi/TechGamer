@@ -17,7 +17,10 @@ function Cadastro() {
             })
     }, [])
 
-
+    const lidarExcluir = (id) => {
+        const novosProdutos = produtos.filter(produto => produto.id !== id)
+        setProdutos(novosProdutos);
+    }
 
     const esquemaDeValidacao = yup.object({
         nome: yup
@@ -29,7 +32,7 @@ function Cadastro() {
         descricao: yup
             .string()
             .required("Descrição é obrigatória")
-            .max(200, "Limite máximo de caracteres"),
+            .max(500, "Limite máximo de caracteres"),
         estoque: yup
             .string()
             .required("Estoque é obrigatório"),
@@ -65,7 +68,7 @@ function Cadastro() {
                                 name="nome"
                                 id="nome"
                             />
-                            <ErrorMessage component="p" name="nome" className={styles.erro}/>
+                            <ErrorMessage component="p" name="nome" className={styles.erro} />
                         </fieldset>
 
                         <fieldset className={styles.formGroup}>
@@ -76,7 +79,7 @@ function Cadastro() {
                                 name="preco"
                                 id="preco"
                             />
-                            <ErrorMessage component="p" name="preco" className={styles.erro}/>
+                            <ErrorMessage component="p" name="preco" className={styles.erro} />
                         </fieldset>
 
                         <fieldset className={styles.formGroup}>
@@ -87,7 +90,7 @@ function Cadastro() {
                                 name="descricao"
                                 id="descricao"
                             />
-                            <ErrorMessage component="p" name="descricao" className={styles.erro}/>
+                            <ErrorMessage component="p" name="descricao" className={styles.erro} />
                         </fieldset>
 
                         <fieldset className={styles.formGroup}>
@@ -98,7 +101,7 @@ function Cadastro() {
                                 name="estoque"
                                 id="estoque"
                             />
-                            <ErrorMessage component="p" name="estoque" className={styles.erro}/>
+                            <ErrorMessage component="p" name="estoque" className={styles.erro} />
                         </fieldset>
 
                         <fieldset className={styles.formGroup}>
@@ -109,7 +112,7 @@ function Cadastro() {
                                 name="imagem"
                                 id="imagem"
                             />
-                            <ErrorMessage component="p" name="'imagem" className={styles.erro}/>
+                            <ErrorMessage component="p" name="'imagem" className={styles.erro} />
                         </fieldset>
 
                         <fieldset className={styles.formGroup}>
@@ -120,7 +123,7 @@ function Cadastro() {
                                 name="cor"
                                 id="cor"
                             />
-                            <ErrorMessage component="p" name="cor" className={styles.erro}/>
+                            <ErrorMessage component="p" name="cor" className={styles.erro} />
                         </fieldset>
 
                         <button type="submit" className={styles.botao}>Cadastrar produtos</button>
@@ -132,7 +135,11 @@ function Cadastro() {
 
                 <div className={styles.cardsContainer}>
                     {produtos.map((produt) => {
-                        return <CardLista {...produt} key={produt.id} />
+                        return <CardLista
+                            {...produt}
+                            key={produt.id}
+                            onExcluir={() => lidarExcluir(produt.id)}
+                        />
                     })}
                 </div>
             </section>
