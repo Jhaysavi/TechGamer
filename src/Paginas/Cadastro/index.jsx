@@ -22,6 +22,10 @@ function Cadastro() {
         setProdutos(novosProdutos);
     }
 
+    const adicionarProduto = (novoProduto) => {
+        setProdutos([...produtos, novoProduto]);
+    }
+
     const esquemaDeValidacao = yup.object({
         nome: yup
             .string()
@@ -55,7 +59,10 @@ function Cadastro() {
             <Formik
                 initialValues={{ nome: "", preco: "", descricao: "", estoque: "", imagem: "", cor: "" }}
                 validationSchema={esquemaDeValidacao}
-                onSubmit={values => console.log(values)}
+                onSubmit={(values, {resetForm}) => {
+                    adicionarProduto({...values, id:Date.now() })
+                    resetForm();
+                }}
             >
                 <section className={styles.container}>
                     <h1 className={styles.titulo}>Cadastro de produtos</h1>
@@ -75,7 +82,7 @@ function Cadastro() {
                             <label className={styles.label} htmlFor="preco">Preço:</label>
                             <Field
                                 className={styles.input}
-                                type="number"
+                                type="text"
                                 name="preco"
                                 id="preco"
                             />
