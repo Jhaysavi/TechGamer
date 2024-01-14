@@ -56,7 +56,6 @@
 .descricao{
     border:2px solid #000000;
     border-radius: 5px;
-    rezide:none;
     width: 300px;
 }
 
@@ -81,5 +80,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.erro{
+    color: red;
 }
 
