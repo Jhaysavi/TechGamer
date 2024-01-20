@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from './Cadastro.module.css';
 import CardLista from "../../Componentes/CardLista";
 import Footer from "../../Componentes/Footer";
-import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from "yup";
 
 function Cadastro() {
     const [produtos, setProdutos] = useState([]);
+    const [produtoEmEdicao, setProdutoEmEdicao] = useState(null);
+
 
     useEffect(() => {
         fetch(`https://my-json-server.typicode.com/Jhaysavi/techGamer-api/db`)
@@ -26,6 +27,11 @@ function Cadastro() {
         setProdutos([...produtos, novoProduto]);
     }
 
+    const lidarEditar = (id) => {
+        const produtoParaEditar = produtos.find(produto => produto.id === id);
+        setProdutoEmEdicao(produtoParaEditar);
+    };
+    
     const esquemaDeValidacao = yup.object({
         nome: yup
             .string()
@@ -50,23 +56,41 @@ function Cadastro() {
 
     return (
         <>
-
             <header className={styles.containerCabecalho}>
                 <img src="/logo.png" alt="Logo" className={styles.logo} />
                 <h1 className={styles.cadastro}>Sistema de Cadastro</h1>
             </header>
 
-            <Formik
-                initialValues={{ nome: "", preco: "", descricao: "", estoque: "", imagem: "", cor: "" }}
-                validationSchema={esquemaDeValidacao}
-                onSubmit={(values, {resetForm}) => {
-                    adicionarProduto({...values, id:Date.now() })
-                    resetForm();
-                }}
-            >
-                <section className={styles.container}>
-                    <h1 className={styles.titulo}>Cadastro de produtos</h1>
-                    <Form action="/" method='POST' >
+            <section className={styles.container}>
+                <h1 className={styles.titulo}>Cadastro de produtos</h1>
+
+                <Formik
+                    initialValues={{
+                        nome: produtoEmEdicao ? produtoEmEdicao.nome : "",
+                        preco: produtoEmEdicao ? produtoEmEdicao.preco : "",
+                        descricao: produtoEmEdicao ? produtoEmEdicao.descricao : "",
+                        estoque: produtoEmEdicao ? produtoEmEdicao.estoque : "",
+                        imagem: produtoEmEdicao ? produtoEmEdicao.imagem : "",
+                        cor: produtoEmEdicao ? produtoEmEdicao.cor : "",
+                    }}
+                    validationSchema={esquemaDeValidacao}
+                    onSubmit={(values, { resetForm }) => {
+                        if (produtoEmEdicao) {
+                            const produtosAtualizados = produtos.map(produto => {
+                                if (produto.id === produtoEmEdicao.id) {
+                                    return { ...produtoEmEdicao, ...values };
+                                }
+                                return produto;
+                            });
+                            setProdutos(produtosAtualizados);
+                            setProdutoEmEdicao(null);
+                        } else {
+                            adicionarProduto({ ...values, id: Date.now() });
+                        }
+                        resetForm();
+                    }}
+                >
+                    <Form>
                         <fieldset className={styles.formGroup}>
                             <label className={styles.label} htmlFor="nome">Nome:</label>
                             <Field
@@ -112,18 +136,18 @@ function Cadastro() {
                         </fieldset>
 
                         <fieldset className={styles.formGroup}>
-                            <label className={styles.label} htmlFor="imagem">Imagem</label>
+                            <label className={styles.label} htmlFor="imagem">Imagem:</label>
                             <Field
                                 className={styles.input}
-                                type="file"
+                                type="text"
                                 name="imagem"
                                 id="imagem"
                             />
-                            <ErrorMessage component="p" name="'imagem" className={styles.erro} />
+                            <ErrorMessage component="p" name="imagem" className={styles.erro} />
                         </fieldset>
 
                         <fieldset className={styles.formGroup}>
-                            <label className={styles.label} htmlFor="cor">Cores</label>
+                            <label className={styles.label} htmlFor="cor">Cores:</label>
                             <Field
                                 className={styles.input}
                                 type="text"
@@ -133,27 +157,30 @@ function Cadastro() {
                             <ErrorMessage component="p" name="cor" className={styles.erro} />
                         </fieldset>
 
-                        <button type="submit" className={styles.botao}>Cadastrar produtos</button>
+                        <button type="submit" className={styles.botao}>
+                            {produtoEmEdicao ? "Editar Produto" : "Cadastrar Produto"}
+                        </button>
                     </Form>
-                </section>
-            </Formik>
-            <section>
+                </Formik>
+
                 <h2 className={styles.titulo}>Produtos cadastrados</h2>
 
                 <div className={styles.cardsContainer}>
-                    {produtos.map((produt) => {
-                        return <CardLista
-                            {...produt}
-                            key={produt.id}
-                            onExcluir={() => lidarExcluir(produt.id)}
+                    {produtos.map((produto) => (
+                        <CardLista
+                            {...produto}
+                            key={produto.id}
+                            onExcluir={() => lidarExcluir(produto.id)}
+                            onEditar={() => lidarEditar(produto.id)}
                         />
-                    })}
+                    ))}
                 </div>
             </section>
 
-            < Footer />
+            <Footer />
         </>
     );
 }
 
 export default Cadastro;
+
