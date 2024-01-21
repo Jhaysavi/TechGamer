@@ -5,7 +5,7 @@ import "/node_modules/slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import propTypes from 'prop-types';
 
-function CarouselCards({ backgroundColor, cardsDeProdutos }) {
+function CarouselCards({  cardsDeProdutos, color }) {
     const configuracoes = {
         dots: true,
         infinite: true,
@@ -31,7 +31,7 @@ function CarouselCards({ backgroundColor, cardsDeProdutos }) {
     };
 
     return (
-        <div style={backgroundColor={backgroundColor}}>
+        <div style={{background: color}}>
             <Slider {...configuracoes}>
                 {cardsDeProdutos.map((produto, index) => (
                     <div key={index} className={styles.container} >
@@ -61,7 +61,7 @@ CarouselCards.propTypes={
 };
 
 CarouselCards.defaultProps = {
-    backgroundColor:'#ffff',
+   color:'#ffff',
 };
 
 export default CarouselCards;
