@@ -1,0 +1,79 @@
+.containerCabecalho{
+  background-color: #414f72;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+                        
+.cadastro{
+   color: #ffffff;
+   font-size: 25px;
+}
+                        
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+                        
+.titulo {
+  color: #040d53;     
+  font-size: 42px;
+  font-weight: 800;      
+  margin-bottom: 4rem; 
+  text-align: center;
+} 
+                        
+.formGroup{
+   margin-bottom: 2rem;
+}
+                        
+.label{
+ display: block;
+ font-size: 19px;
+ font-weight: 600;
+}
+                        
+.input{
+  border:2px solid #000000;
+  border-radius: 5px;   
+  height: 40px;
+  width: 300px;
+}
+                        
+.input:focus{
+  outline: none !important;                      
+  border-color: #719ECE;                       
+  box-shadow: 0 0 10px #719ECE;
+}
+                        
+.descricao{
+  border:2px solid #000000;
+  border-radius: 5px;
+  width: 300px;
+}
+                        
+.descricao:focus{ 
+   outline: none !important;
+   border-color: #719ECE;                     
+   box-shadow: 0 0 10px #719ECE;
+}
+.botao{
+  background-color: #23ad1d;
+  color: #ffffff;    
+  font-size: 19px;
+  font-weight: 600;      
+  padding: 1rem;
+}
+                        
+.cardsContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+                        
+.erro{
+   color: red;
+}
+                        
+                        

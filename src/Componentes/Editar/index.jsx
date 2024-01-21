@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import styles from './Cadastro.module.css';
-import CardLista from "../../Componentes/CardLista";
+import styles from './Editar.module.css';
 import Footer from "../../Componentes/Footer";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from "yup";
 
-function Cadastro() {
+function Editar() {
     const [produtos, setProdutos] = useState([]);
     const [produtoEmEdicao, setProdutoEmEdicao] = useState(null);
 
@@ -18,19 +17,10 @@ function Cadastro() {
             })
     }, [])
 
-    const lidarExcluir = (id) => {
-        const novosProdutos = produtos.filter(produto => produto.id !== id)
-        setProdutos(novosProdutos);
-    }
-
     const adicionarProduto = (novoProduto) => {
         setProdutos([...produtos, novoProduto]);
     }
 
-    const lidarEditar = (id) => {
-        const produtoParaEditar = produtos.filter(produto => produto.id === id);
-        setProdutoEmEdicao(produtoParaEditar);
-    };
     
     const esquemaDeValidacao = yup.object({
         nome: yup
@@ -158,23 +148,10 @@ function Cadastro() {
                         </fieldset>
 
                         <button type="submit" className={styles.botao}>
-                            {produtoEmEdicao ? "Editar Produto" : "Cadastrar Produto"}
+                            Editar Produto
                         </button>
                     </Form>
                 </Formik>
-
-                <h2 className={styles.titulo}>Produtos cadastrados</h2>
-
-                <div className={styles.cardsContainer}>
-                    {produtos.map((produto) => (
-                        <CardLista
-                            {...produto}
-                            key={produto.id}
-                            onExcluir={() => lidarExcluir(produto.id)}
-                            onEditar={() => lidarEditar(produto.id)}
-                        />
-                    ))}
-                </div>
             </section>
 
             <Footer />
@@ -182,5 +159,5 @@ function Cadastro() {
     );
 }
 
-export default Cadastro;
+export default Editar;
 
