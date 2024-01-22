@@ -1,0 +1,52 @@
+.cadeirasHero{
+    background-image: url('/public/assets/mulhercomdornopescoco.png');
+    background-size: cover;
+    padding: 8rem;
+    text-align: center;
+}
+
+.texto{
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.cadeirasContainer{
+    display: flex;
+}
+
+.textoContainer{
+    background-color: #8B899F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+    height: 312px;
+}
+
+.titulo{
+    color: #BFBFBF;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.imagemContainer{
+    width: 900px;
+    height: 312px;
+}
+
+.suporte{
+    background-image: url('/public/assets/mulherdefone.png');
+    height: 520px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.homemGamer{
+    background-image: url('/public/assets/homemgamer.png');
+    height: 520px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

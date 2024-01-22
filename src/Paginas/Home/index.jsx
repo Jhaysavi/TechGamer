@@ -3,6 +3,7 @@ import Carousel from '/src/Componentes/Carousel/index.jsx';
 import CarouselCards from '/src/Componentes/CarouselCards/index.jsx';
 import Footer from '/src/Componentes/Footer/index.jsx';
 import '/src/Paginas/Home/App.css';
+import styles from './home.module.css';
 
 function Home() {
     const images = [
@@ -67,13 +68,35 @@ function Home() {
 
             {/*Grid de imagens cadeiras*/}
 
+            <section>
+                <div className={styles.cadeirasHero}>
+                    <h2 className={styles.texto}>Melhore sua postura com nossas cadeiras de escritório!</h2>
+                       <h2 className={styles.texto}>Sem dor na coluna!</h2> 
+                </div>
+                <div className={styles.cadeirasContainer}>
+                    <div className={styles.textoContainer}> 
+                    <h4 className={styles.titulo}>
+                        Para seu conforto!
+                    </h4>
+                    </div>
+                    <div>
+                        <img src="public\assets\caranopc.png" alt="Homem no PC" className={styles.imagemContainer} />
+                    </div>
+                </div>
+            </section>
+
             <CarouselCards color="" cardsDeProdutos={cardLaptop} /> {/*Carousel cadeiras*/}
 
             {/*Grid de imagens suportes*/}
+            <section className={styles.suporte}>
+            </section>
 
             <CarouselCards color="" cardsDeProdutos={cardLaptop} /> {/*Carousel suporte notebook*/}
 
             {/*Grid de imagens luz*/}
+            <h2 className={styles.texto}>Para um ambiente bem iluminado!</h2>
+            <section className={styles.homemGamer}>
+            </section>
 
             <CarouselCards color="" cardsDeProdutos={cardLaptop} /> {/*Carousel iluminação*/}
 
