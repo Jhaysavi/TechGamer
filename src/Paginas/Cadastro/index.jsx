@@ -28,7 +28,7 @@ function Cadastro() {
     }
 
     const lidarEditar = (id) => {
-        const produtoParaEditar = produtos.filter(produto => produto.id === id);
+        const produtoParaEditar = produtos.find(produto => produto.id === id);
         setProdutoEmEdicao(produtoParaEditar);
     };
     
@@ -183,4 +183,6 @@ function Cadastro() {
 }
 
 export default Cadastro;
+
+
 
