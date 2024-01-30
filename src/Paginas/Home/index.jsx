@@ -61,23 +61,29 @@ function Home() {
                     </div>
                 ))}
             </div>
-            <CarouselCards color="" cardsDeProdutos={cardLaptop} />{/*Carousel monitor*/}
-            <CarouselCards color="" cardsDeProdutos={cardLaptop} /> {/*Carousel CPU*/}
-            <CarouselCards color="#670000" cardsDeProdutos={cardLaptop} /> {/*Carousel de fones */}
-            <CarouselCards color="" cardsDeProdutos={cardLaptop} /> {/*Carousel prcessador*/}
+            <CarouselCards bgStyle="#ffffff" cardsDeProdutos={cardLaptop} />{/*Carousel monitor*/}
+            <CarouselCards
+                bgStyle="linear-gradient(180deg, #42FF00 0%, rgba(254, 0, 168, 0.46) 55.06%, rgba(0, 0, 0, 0.83) 92.22%)"
+                cardsDeProdutos={cardLaptop}
+            /> {/*Carousel CPU*/}
+            <CarouselCards bgStyle="#670000" cardsDeProdutos={cardLaptop} /> {/*Carousel de fones */}
+            <CarouselCards
+                bgStyle="linear-gradient(180deg, #10F3E6 0%, rgba(16, 134, 243, 0.80) 28.75%, rgba(16, 52, 238, 0.33) 55.11%, rgba(47, 16, 234, 0.65) 76.49%, #D410F3 100%)"
+                cardsDeProdutos={cardLaptop}
+            /> {/*Carousel prcessador*/}
 
             {/*Grid de imagens cadeiras*/}
 
             <section>
                 <div className={styles.cadeirasHero}>
                     <h2 className={styles.texto}>Melhore sua postura com nossas cadeiras de escritório!</h2>
-                       <h2 className={styles.texto}>Sem dor na coluna!</h2> 
+                    <h2 className={styles.texto}>Sem dor na coluna!</h2>
                 </div>
                 <div className={styles.cadeirasContainer}>
-                    <div className={styles.textoContainer}> 
-                    <h4 className={styles.titulo}>
-                        Para seu conforto!
-                    </h4>
+                    <div className={styles.textoContainer}>
+                        <h4 className={styles.titulo}>
+                            Para seu conforto!
+                        </h4>
                     </div>
                     <div>
                         <img src="public\assets\caranopc.png" alt="Homem no PC" className={styles.imagemContainer} />
@@ -85,20 +91,29 @@ function Home() {
                 </div>
             </section>
 
-            <CarouselCards color="" cardsDeProdutos={cardLaptop} /> {/*Carousel cadeiras*/}
+            <CarouselCards
+                bgStyle="linear-gradient(180deg, #682B2B 0%, rgba(108, 75, 75, 0.74) 48.7%, #682B2B 96.8%)"
+                cardsDeProdutos={cardLaptop}
+            /> {/*Carousel cadeiras*/}
 
             {/*Grid de imagens suportes*/}
             <section className={styles.suporte}>
             </section>
 
-            <CarouselCards color="" cardsDeProdutos={cardLaptop} /> {/*Carousel suporte notebook*/}
+            <CarouselCards bgStyle="#ffffff" cardsDeProdutos={cardLaptop} /> {/*Carousel suporte notebook*/}
 
             {/*Grid de imagens luz*/}
-            <h2 className={styles.texto}>Para um ambiente bem iluminado!</h2>
-            <section className={styles.homemGamer}>
-            </section>
+            <div className={styles.bgColor}>
+                <h2 className={styles.texto}>Para um ambiente bem iluminado!</h2>
+                <section className={styles.homemGamer}>
+                </section>
 
-            <CarouselCards color="" cardsDeProdutos={cardLaptop} /> {/*Carousel iluminação*/}
+                <CarouselCards
+                    bgStyle="linear-gradient(180deg, #59ABF8 0%, rgba(149, 252, 124, 0.72) 100%)"
+                    cardsDeProdutos={cardLaptop}
+                /> {/*Carousel iluminação*/}
+
+            </div>
 
 
 

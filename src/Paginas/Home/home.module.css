@@ -50,3 +50,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.bgColor{
+    background: linear-gradient(180deg, #59ABF8 0%, rgba(149, 252, 124, 0.72) 100%);
+}
