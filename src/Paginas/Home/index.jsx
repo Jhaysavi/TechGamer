@@ -2,7 +2,6 @@ import CabecalhoHome from '/src/Componentes/Cabecalho/index.jsx';
 import Carousel from '/src/Componentes/Carousel/index.jsx';
 import CarouselCards from '/src/Componentes/CarouselCards/index.jsx';
 import Footer from '/src/Componentes/Footer/index.jsx';
-import '/src/Paginas/Home/App.css';
 import styles from './home.module.css';
 
 function Home() {
@@ -53,11 +52,11 @@ function Home() {
             <Carousel images={images} />
 
             {/* Hero Section */}
-            <div className="hero-section">
+            <div className={styles.heroSection}>
                 {images.slice(0, 4).map((image, index) => (
-                    <div key={index} className="hero-image">
+                    <div key={index} className={styles.heroImage}>
                         <img src={image} alt={`Hero ${index + 1}`} />
-                        <div className="image-overlay"></div>
+                        <div className={styles.imageOverlay}></div>
                     </div>
                 ))}
             </div>
